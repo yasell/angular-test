@@ -3,12 +3,13 @@
 	z-index: 100;
 }
 
-.logo__text {
-	color: darkgray;
-
-	&:hover {
-		color: gray;
-	}
+.logo__link {
+	display: block;
+	width: 55px;
+	height: 40px;
+	font-size: 0;
+	background: url("../img/logo.png") center no-repeat;
+	background-size: contain;
 
 	&:focus,
 	&:hover {

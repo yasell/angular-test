@@ -1,0 +1,17 @@
+.filter {
+	width: 100%;
+	background-color: $gray_lightest;
+}
+
+.filter__list {
+	display: flex;
+	align-items: center;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+
+.filter__item {
+	&:last-child {
+		margin-left: auto;
+	}
+}

@@ -1,7 +1,4 @@
 $(document).ready(function($) {
-	// - developer funcitons
-	pageWidget(['index', 'news', 'contact']);
-	getAllClasses('html', '.elements_list');
 
 	// - mobile menu
 	$body = $("body");

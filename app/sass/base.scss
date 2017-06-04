@@ -52,6 +52,7 @@ a {
 
 .page-wrapper {
 	position: relative;
+	min-width: 320px;
 	min-height: 100%;
 	height: auto !important;
 	overflow: hidden;

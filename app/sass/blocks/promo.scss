@@ -1,0 +1,22 @@
+.promo {
+	background-color: $gray_dark;
+}
+
+.promo__text {
+	position: relative;
+	padding: 2.5rem 0;
+	padding-left: 50px;
+	font-size: 1.6rem;
+	color: #fff;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 20px;
+		left: 0;
+		width: 30px;
+		height: 30px;
+		background: url("../img/icons/twitter.svg") center no-repeat;
+		background-size: contain;
+	}
+}
