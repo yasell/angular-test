@@ -1,7 +1,9 @@
+"use strict";
+
 var app = angular.module("testTask", []);
 
-app.controller('productsCtrl', ['$scope', function ($scope) {
-	
+app.controller("productsCtrl", ["$scope", function ($scope) {
+
 	$scope.data = {
 		"items": [
 		{
@@ -54,16 +56,16 @@ app.controller('productsCtrl', ['$scope', function ($scope) {
 			"women" : true,
 			"child": false
 	};
-	
+
 	$scope.changeFilter  = function (obj) {
 		return !$scope.showCategory[obj];
 	}
-	
+
 }]);
 
 
-app.controller('menuCtrl', ['$scope', function ($scope) {
-	
+app.controller("menuCtrl", ["$scope", function ($scope) {
+
 	$scope.data = {
 		"footerMenu" : [
 			{

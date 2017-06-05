@@ -39,7 +39,7 @@
 						<a href="#/" class="header__menu-link"> Home </a>
 					</li>
 					<li class="header__menu-item">
-						<a href="#/" class="header__menu-link"> Products </a>
+						<a href="#products" class="header__menu-link"> Products </a>
 					</li>
 					<li class="header__menu-item">
 						<a href="#/" class="header__menu-link">
@@ -56,30 +56,30 @@
 			<section class="hero  container">
 				<h1 class="hero__title"> Our clothing , your comfort </h1>
 				<p class="hero__content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-				<a class="hero__scroll-down" href="#/"></a>
+				<a class="hero__scroll-down" href="#products"></a>
 			</section>
 
-			<div class="product-list" ng-controller="productsCtrl">
+			<div id="products" class="product-list" ng-controller="productsCtrl">
 			
 				<div class="filter">
 					<ul class="filter__list  container">
 						<li class="filter__item">
 							<label class="filter__label">
-													<input class="filter__checkbox" type="checkbox" name="men" checked="">
-													<span class="filter__field"> Men </span>
-												</label>
+								<input class="filter__checkbox" type="checkbox" name="men" checked="">
+								<span class="filter__field"> Men </span>
+							</label>
 						</li>
 						<li class="filter__item">
 							<label class="filter__label">
-													<input class="filter__checkbox" type="checkbox" name="women" checked="">
-													<span class="filter__field"> Women </span>
-												</label>
+								<input class="filter__checkbox" type="checkbox" name="women" checked="">
+								<span class="filter__field"> Women </span>
+							</label>
 						</li>
 						<li class="filter__item">
 							<label class="filter__label">
-													<input class="filter__checkbox" type="checkbox" name="childrobotoren">
-													<span class="filter__field"> Childrobotoren </span>
-												</label>
+								<input class="filter__checkbox" type="checkbox" name="childrobotoren">
+								<span class="filter__field"> Childrobotoren </span>
+							</label>
 						</li>
 						<li class="filter__item">
 							<button id="all_btn" class="button" type="button" name="See all prodrobotoucts"> See all prodrobotoucts </button>
@@ -90,88 +90,19 @@
 				<div class="product-list__result  container">
 					<ul>
 			
-						<!-- <li class="product  product-list__item" ng-repeat="item in items">
+						<li class="product  product-list__item" ng-repeat="item in data.items">
 							<div class="product__size">
 								<select>
-												<option value="">Size</option>
-												<option value="" disabled="">W28in L30in - Not available</option>
-												<option value="" disabled="">W30in L30in - Not available</option>
-												<option value="" disabled="">W32in L30in - Not available</option>
-												<option value="">W32in L32in</option>
-												<option value="">W34in L30in</option>
-												<option value="">W34in L32in</option>
-												<option value="">W36in L32in</option>
+									<option ng-repeat="i in item.options">{{i}}</option>
 								</select>
 							</div>
 							<a href="#/">
 								<div class="product__image">
-									<img src="/img/catalog/product-1.png" alt="Shirt">
+									<img src="/img/catalog/product-{{item.img}}.png" alt="Product">
 								</div>
 								<div class="product__text">
-									<div class="product__name"> T-shirt </div>
-									<div class="product__price"> 5,00 </div>
-								</div>
-							</a>
-						</li>
-			
-						<li class="product  product-list__item">
-							<div class="product__size">
-								<select>
-												<option value="">Size</option>
-												<option value="" disabled="">W28in L30in - Not available</option>
-												<option value="" disabled="">W30in L30in - Not available</option>
-												<option value="" disabled="">W32in L30in - Not available</option>
-												<option value="">W32in L32in</option>
-												<option value="">W34in L30in</option>
-												<option value="">W34in L32in</option>
-												<option value="">W36in L32in</option>
-											</select>
-							</div>
-							<a href="#/">
-								<div class="product__image">
-									<img src="/img/catalog/product-2.png" alt="Pants">
-								</div>
-								<div class="product__text">
-									<div class="product__name"> Pants FORCLAZ </div>
-									<div class="product__price"> 30,00 </div>
-								</div>
-							</a>
-						</li>
-			
-						<li class="product  product-list__item">
-							<div class="product__size">
-								<select>
-												<option value="">10 litri</option>
-												<option value="" disabled="">20 litri- Not available</option>
-												<option value="">30 litri</option>
-												<option value="">40 litri</option>
-												<option value="">50 litri</option>
-											</select>
-							</div>
-							<a href="#/">
-								<div class="product__image">
-									<img src="/img/catalog/product-3.png" alt="Bag">
-								</div>
-								<div class="product__text">
-									<div class="product__name"> Backpack </div>
-									<div class="product__price"> 60,00 </div>
-								</div>
-							</a>
-						</li> -->
-			
-						<li class="product  product-list__item" ng-repeat="items in data">
-							<div class="product__size">
-								<select>
-									<option value="">{{items.options}}</option>
-								</select>
-							</div>
-							<a href="#/">
-								<div class="product__image">
-									<img src="/img/catalog/product-3.png" alt="Product">
-								</div>
-								<div class="product__text">
-									<div class="product__name"> {{items.name}} </div>
-									<div class="product__price"> {{items.price}} </div>
+									<div class="product__name"> {{item.name}} </div>
+									<div class="product__price"> {{item.price}} </div>
 								</div>
 							</a>
 						</li>
@@ -197,19 +128,10 @@
 				</div>
 		
 				<div class="footer__col">
-					<nav class="footer__nav">
+					<nav class="footer__nav" ng-controller="menuCtrl">
 						<ul>
-							<li>
-								<a class="footer__link" href="#/"> Credits </a>
-							</li>
-							<li>
-								<a class="footer__link" href="#/"> Privacy </a>
-							</li>
-							<li>
-								<a class="footer__link" href="#/"> About </a>
-							</li>
-							<li>
-								<a class="footer__link" href="#/"> Contact </a>
+							<li ng-repeat="item in data.footerMenu">
+								<a class="footer__link" href="{{item.link}}" title="{{item.title}}"> {{item.name}} </a>
 							</li>
 						</ul>
 					</nav>
@@ -225,9 +147,9 @@
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="js/app.js"></script>
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
-	<!-- <script src="js/main.js"></script> -->
+	<script src="js/main.js"></script>
 
 </body>
 

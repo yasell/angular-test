@@ -1,92 +1,23 @@
-<div class="product-list" ng-controller="productsCtrl">
+<div id="products" class="product-list" ng-controller="productsCtrl">
 
 	//= filter.html
 
 	<div class="product-list__result  container">
 		<ul>
 
-			<!-- <li class="product  product-list__item" ng-repeat="item in items">
+			<li class="product  product-list__item" ng-repeat="item in data.items">
 				<div class="product__size">
 					<select>
-									<option value="">Size</option>
-									<option value="" disabled="">W28in L30in - Not available</option>
-									<option value="" disabled="">W30in L30in - Not available</option>
-									<option value="" disabled="">W32in L30in - Not available</option>
-									<option value="">W32in L32in</option>
-									<option value="">W34in L30in</option>
-									<option value="">W34in L32in</option>
-									<option value="">W36in L32in</option>
+						<option ng-repeat="i in item.options">{{i}}</option>
 					</select>
 				</div>
 				<a href="#/">
 					<div class="product__image">
-						<img src="/img/catalog/product-1.png" alt="Shirt">
+						<img src="/img/catalog/product-{{item.img}}.png" alt="Product">
 					</div>
 					<div class="product__text">
-						<div class="product__name"> T-shirt </div>
-						<div class="product__price"> 5,00 </div>
-					</div>
-				</a>
-			</li>
-
-			<li class="product  product-list__item">
-				<div class="product__size">
-					<select>
-									<option value="">Size</option>
-									<option value="" disabled="">W28in L30in - Not available</option>
-									<option value="" disabled="">W30in L30in - Not available</option>
-									<option value="" disabled="">W32in L30in - Not available</option>
-									<option value="">W32in L32in</option>
-									<option value="">W34in L30in</option>
-									<option value="">W34in L32in</option>
-									<option value="">W36in L32in</option>
-								</select>
-				</div>
-				<a href="#/">
-					<div class="product__image">
-						<img src="/img/catalog/product-2.png" alt="Pants">
-					</div>
-					<div class="product__text">
-						<div class="product__name"> Pants FORCLAZ </div>
-						<div class="product__price"> 30,00 </div>
-					</div>
-				</a>
-			</li>
-
-			<li class="product  product-list__item">
-				<div class="product__size">
-					<select>
-									<option value="">10 litri</option>
-									<option value="" disabled="">20 litri- Not available</option>
-									<option value="">30 litri</option>
-									<option value="">40 litri</option>
-									<option value="">50 litri</option>
-								</select>
-				</div>
-				<a href="#/">
-					<div class="product__image">
-						<img src="/img/catalog/product-3.png" alt="Bag">
-					</div>
-					<div class="product__text">
-						<div class="product__name"> Backpack </div>
-						<div class="product__price"> 60,00 </div>
-					</div>
-				</a>
-			</li> -->
-
-			<li class="product  product-list__item" ng-repeat="items in data">
-				<div class="product__size">
-					<select>
-						<option value="">{{items.options}}</option>
-					</select>
-				</div>
-				<a href="#/">
-					<div class="product__image">
-						<img src="/img/catalog/product-3.png" alt="Product">
-					</div>
-					<div class="product__text">
-						<div class="product__name"> {{items.name}} </div>
-						<div class="product__price"> {{items.price}} </div>
+						<div class="product__name"> {{item.name}} </div>
+						<div class="product__price"> {{item.price}} </div>
 					</div>
 				</a>
 			</li>
