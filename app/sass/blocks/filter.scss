@@ -15,3 +15,50 @@
 		margin-left: auto;
 	}
 }
+
+.filter__label {
+  margin-right: 40px;
+}
+
+// checkboxes
+.filter__checkbox {
+  display: none;
+  margin-right: 30px;
+
+  &:checked + .filter__field:after {
+    opacity: 1;
+  }
+  &:checked + .filter__field:before {
+    border-color: $orange_lighter;
+  }
+}
+
+.filter__field {
+  position: relative;
+  padding: 0 0 0 30px;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    border: 2px solid $gray-light;
+		background-color: #fff;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    opacity: 0;
+    background: url("../img/icons/yes-ico.svg") center no-repeat;
+    background-size: contain;
+    transition: all 0.3s ease;
+  }
+}

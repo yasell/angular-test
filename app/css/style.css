@@ -138,6 +138,7 @@ a {
   position: fixed;
   width: 100%;
   max-width: 1210px;
+  height: 80px;
   top: 0;
   left: 0;
   right: 0;
@@ -403,6 +404,44 @@ a {
 
 .filter__item:last-child {
   margin-left: auto; }
+
+.filter__label {
+  margin-right: 40px; }
+
+.filter__checkbox {
+  display: none;
+  margin-right: 30px; }
+  .filter__checkbox:checked + .filter__field:after {
+    opacity: 1; }
+  .filter__checkbox:checked + .filter__field:before {
+    border-color: #aa9b77; }
+
+.filter__field {
+  position: relative;
+  padding: 0 0 0 30px;
+  cursor: pointer; }
+  .filter__field:before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #b1b1b1;
+    background-color: #fff; }
+  .filter__field:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    opacity: 0;
+    background: url("../img/icons/yes-ico.svg") center no-repeat;
+    background-size: contain;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
 
 .product-list__result {
   padding-top: 8rem;

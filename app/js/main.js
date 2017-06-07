@@ -4,7 +4,7 @@ $(document).ready(function($) {
 	$body = $("body");
 	$menuTrigger = $("#menu__trigger");
 
-	$menuTrigger.on("click", function () {
+	$menuTrigger.on("click", function() {
 		if ($body.hasClass("menu__open")) {
 			$body.removeClass("menu__open");
 			$(this).removeClass("active__mod");
@@ -23,5 +23,14 @@ $(document).ready(function($) {
 			scrollTop: $(el).offset().top
 		}, 2000);
 		return false;
+	});
+
+	// fixed header
+	$(window).scroll(function() {
+		var sticky = $(".header"),
+			scroll = $(window).scrollTop();
+
+		if (scroll >= 40) sticky.addClass("header--fixed");
+		else sticky.removeClass("header--fixed");
 	});
 });
